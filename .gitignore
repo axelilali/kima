@@ -1,0 +1,4 @@
+.vscode
+.env
+vendor
+node_modules

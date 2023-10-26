@@ -1,0 +1,15 @@
+{
+    "name": "axelilali/starter",
+    "type": "project",
+    "require": {
+        "twig/twig": "^3.7"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Axel Ilali",
+            "email": "axel.ilali@yahoo.fr"
+        }
+    ],
+    "minimum-stability": "stable"
+}
