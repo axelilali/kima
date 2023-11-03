@@ -1,5 +1,5 @@
 {
-	"name": "vitepress",
+	"name": "mbangu",
 	"type": "project",
 	"require": {
 		"twig/twig": "^3.7"

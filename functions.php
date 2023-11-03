@@ -7,9 +7,23 @@ class Theme
 
  public function __construct()
  {
-
-  self::add_twig_function();
+  self::site_config();
   self::theme_support();
+  self::add_twig_function();
+ }
+
+ private function site_config()
+ {
+  global $context;
+
+  $context['site'] = array(
+   'locale'       => get_language_attributes(),
+   'url'          => site_url(),
+   'description'  => get_bloginfo('description'),
+   'charset'      => get_bloginfo('charset'),
+   'pingback_url' => get_bloginfo('pingback_url'),
+
+  );
  }
 
  private function theme_support()

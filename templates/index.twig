@@ -1,5 +1,14 @@
 {% extends "base.twig" %}
 		{% block content %}
-			<h1>{{ post.post_title }}</h1>
-			<article>{{post.post_content|raw}}</article>
+			<h2>Latest posts</h2>
+
+			{% for post in posts %}
+				<article>
+					<img width="300" src="{{post.thumbnail}}" alt="">
+					<p>
+						<a href="{{post.link}}">{{post.title}}</a>
+					</p>
+				</article>
+			{% endfor %}
+
 		{% endblock %}

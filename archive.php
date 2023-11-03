@@ -7,7 +7,7 @@ $query = new WP_Query([
 
 if ($query->have_posts()) {
  while ($query->have_posts()): $query->the_post();
-  $context['posts'] = [
+  $context['posts'][] = [
    'title'     => get_the_title(),
    'link'      => get_the_permalink(),
    'thumbnail' => get_the_post_thumbnail_url(),

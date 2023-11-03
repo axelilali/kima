@@ -1,1 +1,1 @@
-console.log('wp starter')
+console.log('VitePress 🚀')

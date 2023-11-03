@@ -1,5 +1,5 @@
-# VitePress
-A dead simple WordPress started theme using ViteJS for HMR and Hot Reload and Twig for template rendering.
+# Kima
+A dead simple WordPress starter that uses using ViteJS and Twig.
 
 ## How to use
  1. Go into the project and run `composer install` and `yarn install` to install dependencies.
