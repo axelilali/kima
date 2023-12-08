@@ -1,5 +1,5 @@
 # Kima
-A dead simple WordPress starter that with ViteJS and Twig.
+A dead simple WordPress starter with ViteJS and Twig.
 
 ## How to use
  1. Go into the project folder and run `composer install` and `npm install` to install dependencies.
