@@ -1,1 +1,1 @@
-console.log('VitePress 🚀')
+console.log('Kima 🚀')

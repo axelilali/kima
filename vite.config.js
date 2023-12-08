@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
 	server: {
 		host: 'localhost',
+		open: 'http://sandbox.local', //set your site url here
 	},
 	publicDir: '',
 	build: {

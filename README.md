@@ -1,9 +1,9 @@
 # Kima
-A dead simple WordPress starter that uses using ViteJS and Twig.
+A dead simple WordPress starter that with ViteJS and Twig.
 
 ## How to use
- 1. Go into the project and run `composer install` and `yarn install` to install dependencies.
- 2. Copy the *.env-example* file, rename it as *.env* and replace the *WP_SITE_URL* with your site url.
- 3. To start the development server run `yarn dev:mac` if you're on macOS or `yarn dev:windows` if you're on Windows.
- 4. To compile your assets run `yarn build`.
+ 1. Go into the project folder and run `composer install` and `npm install` to install dependencies.
+ 2. Open the vite.config.js and add your site url in the 'open' property.
+ 3. To start the development server run `npm run dev`.
+ 4. To compile your assets run `npm run build`.
  
