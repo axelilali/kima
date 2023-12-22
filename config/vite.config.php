@@ -7,13 +7,13 @@ add_action('wp_enqueue_scripts', function () {
 
   wp_enqueue_script('vite', 'http://localhost:5173/@vite/client', [], null);
   wp_enqueue_script('main-js', 'http://localhost:5173/assets/js/main.js', ['jquery'], null, true);
-  wp_enqueue_style('style-css', 'http://localhost:5173/assets/sass/styles.scss', [], 'null');
+  wp_enqueue_style('style-css', 'http://localhost:5173/assets/scss/styles.scss', [], 'null');
 
  } elseif (file_exists($manifestPath)) {
 
   $manifest = json_decode(file_get_contents($manifestPath), true);
   wp_enqueue_script('main-js', get_theme_file_uri('public/dist/' . $manifest['assets/js/main.js']['file']), ['jquery'], null, true);
-  wp_enqueue_style('style-css', get_theme_file_uri('public/dist/' . $manifest['assets/sass/styles.scss']['file']), [], null);
+  wp_enqueue_style('style-css', get_theme_file_uri('public/dist/' . $manifest['assets/scss/styles.scss']['file']), [], null);
 
  }
 });

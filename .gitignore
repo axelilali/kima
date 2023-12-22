@@ -50,3 +50,4 @@ _site/
 # Ignore miscellaneous files
 .DS_Store
 Thumbs.db
+.env

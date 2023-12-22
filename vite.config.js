@@ -1,28 +1,34 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 
-export default defineConfig({
-	server: {
-		host: 'localhost',
-		open: 'http://sandbox.local', //set your site url here
-	},
-	publicDir: '',
-	build: {
-		assetsDir: '.',
-		emptyOutDir: true,
-		outDir: `public/dist`,
-		manifest: true,
-		rollupOptions: {
-			input: ['assets/js/main.js', 'assets/sass/styles.scss'],
+export default ({ mode }) => {
+	process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
+
+	return defineConfig({
+		base: `/wp-content/themes/${process.env.VITE_THEME_FOLDER}/public`,
+		publicDir: 'public',
+		server: {
+			host: 'localhost',
+			open: process.env.VITE_SITE_URL,
 		},
-	},
-	plugins: [
-		{
-			name: 'twig-reload',
-			handleHotUpdate({ file, server }) {
-				if (file.endsWith('.twig')) {
-					server.ws.send({ type: 'full-reload', path: '*' })
-				}
+		build: {
+			outDir: 'public/dist',
+			assetsDir: '.',
+			emptyOutDir: true,
+			copyPublicDir: false,
+			manifest: true,
+			rollupOptions: {
+				input: ['assets/js/main.js', 'assets/scss/styles.scss'],
 			},
 		},
-	],
-})
+		plugins: [
+			{
+				name: 'twig-reload',
+				handleHotUpdate({ file, server }) {
+					if (file.endsWith('.twig')) {
+						server.ws.send({ type: 'full-reload', path: '*' })
+					}
+				},
+			},
+		],
+	})
+}
